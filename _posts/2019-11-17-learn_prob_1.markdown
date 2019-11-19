@@ -2,7 +2,7 @@
 layout: single
 title:  "Learn Probability Day 1: Combinatorial Analysis"
 date:   2019-11-17 10:40:00 -0400
-categories: probability basics
+categories: basics probability 
 ---
 
 Combinatorial Analysis is a fancy way of counting! It is useful to know how to count the number of ways in which events can occur. Why manually count each possible outcomes, when you can simply use a formula?

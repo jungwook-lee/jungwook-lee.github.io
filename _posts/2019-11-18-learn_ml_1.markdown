@@ -1,0 +1,67 @@
+---
+layout: single
+title:  "Learn ML Day 1: Statistical Learning Basics"
+date:   2019-11-18 13:43:00 -0400
+categories: basics machine_learning
+---
+Notes from: ISLR 
+
+
+## Statistical Learning
+
+Statistical learning is about sets of tools to understand data.
+
+- Inputs, Predictors, Features, Indepedent Variables: \\(X\\)
+- Outputs, Responses, Dependent Variables: \\(Y\\)
+- \\(f\\) represents systematic information that features provide.
+- \\(\epsilon\\) is a error term that is not observable, random and has zero mean.
+
+\\[ Y = f(X) + \epsilon \\]
+
+## Estimation of \\(f\\)
+
+### Prediction
+
+We often collect large amount of data \\(X\\), however the output variable \\(Y\\) is not as easy to obtain. Thus, we aim to predict the output, \\( \hat{Y} \\), the prediction, by estimating a the relationship, \\( \hat{f} \\). 
+
+\\[ \hat{Y} = \hat{f}(X) \\]
+
+- \\( \hat{f} \\) is often treated as black-box:
+    - The exact form of \\( \hat{f} \\) doesn't matter, provided that it produce good predictions.
+- \\( \hat{f} \\) has 2 kinds of errors: 
+    - reducible
+    - non-reducible.
+
+**Modelling for Prediction**: Focus on just providing model that has accurate predictions.
+
+**Modelling for Inference**: Interested in the statistical relationship of each variables to the output and to each features themselves.
+- What kinds of relationship exist between the features?
+- Which features contribute the most to the output?
+- What is the correlation between the features?
+
+### How to estimate \\( f \\)
+
+There are 2 methods to estimate \\( f \\): **Parametric** and **Non-parametric**.
+
+Parametric:
+- Assumes a functional form of \\( f \\), (i.e. linear models)
+- Estimates \\( f \\) over a set of small number of parameters
+- True form of \\( f \\) is often not simple
+- Generally easier, but less accurate
+- More flexible models require more number of parameters
+- More number of parameters contribute to overfitting
+- Overfitting happens when the model fit too closely to noise
+
+Non-Parametric:
+- No assumption on functional form of \\( f \\)
+- Tries to estimate smoothly
+- Can fit wider range of shapes for \\( f \\)
+- Requires large amounts of observations for accurate \\( f \\)
+
+### Tradeoff between Model Interpretability vs. Prediction Accuracy
+- Inference: prefer simple, relatively inflexible static methods
+- Prediction: not care for interpretability
+    - Note that the most flexible models doesn't always perform best. (overfitting)
+    
+### Exercises:
+- Derive the 2 reducible and non-reducible of errors.
