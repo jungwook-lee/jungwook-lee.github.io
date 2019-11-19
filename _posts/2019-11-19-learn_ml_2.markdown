@@ -1,0 +1,78 @@
+---
+layout: single
+title:  "Learn ML Day 2: Supervised vs. Unsupervised"
+date:   2019-11-19 10:15:00 -0400
+categories: basics machine_learning
+---
+
+## Supervised vs. Unsupervised Learning
+
+Supervised:
+- Each set of features, have associated outputs. (i.e. labelled dataset)
+- Aims to accurately predict the response for future observation (prediction)
+- Better understand the relationship between features and output (inference)
+- Techniques for supervised approaches:
+    - linear regression
+    - logistic regression
+    - GAM
+    - boosting
+    - SVM
+ 
+Unsupervised:
+- Lacks output variable that can supervise the analysis.
+- Seek to understand the relationships between the variables:
+    - Cluster Analysis (clustering)
+- Examples:
+    - market segmentation study (categorize customers to groups)
+
+Semi-supervised Learning:
+- For cases where only parts of the dataset is labelled.
+
+## Regression vs. Classification
+
+Classification: prediction of discrete categories (i.e. gender, country)
+- logistic regression
+
+Regression: prediction of continuous values (i.e. price, age)
+- Least squares
+
+- Estimation of Class Probabilities can be either regression/classification problem.
+- K-nearest neighbour can be used for both.
+- The choice of regression/classification based on predictor is not important, since they can be encoded before analysis.
+ 
+## Model Accuracy
+No free lunch theorem: No one method dominates all others over in possible datasets.
+
+It is important to decide which models to use for a specific given task.
+
+For regression: Mean squared error is a commonly used measure.
+
+\\[ MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{f}(x_i))^2 \\]
+
+Training accuracy is often not important, but the generalization capability on unseen dataset. Therefore, the model should be optimized for testing accuracy.
+
+The U-shape is a fundamental property of any statistical learning. The U-shape occurs between training, test error. 
+- As model flexibility increase, training error decreases, but test error might not.
+- Small training error, but large test error = **Overfitting**
+
+Since there are usually not many test data, cross-validation is a very important method for estimating test error using the training data.
+
+## Bias-Variance Trade-Off
+
+\\[ E \Bigl(y_0 - \hat{f}(x_0)\Bigr)^2 = \mathrm{Var}(\hat{f}(x_0)) + [\mathrm{Bias}(\hat{f}(x_0))]^2 + \mathrm{Var}(\epsilon) \\]
+
+- The test error can never be lower than irreducible error.
+- We opt for method that simultaneously give low variance and low bias.
+- Variance of \\(\hat{f}\\) is how much \\(\hat{f}\\) would change if it was estimated using different dataset.
+- Ideally Variance of \\(\hat{f}\\) should not change too much from dataset to datsets.
+- High variance of \\(\hat{f}\\) means the approximation changes even with small differences in datasets. This could be a sign of overfitting.
+- In general, more flexible methods have higher variance.
+
+- Bias of \\(\hat{f}\\) refers to error introduced by approximating a real-life problem.
+- Bias results from assumption of too simplistic model to solve a problem.
+- Generally, more flexible methods have lower bias.
+
+In general, it is hard to explicitly calculate test bias, variance.
+
+
+

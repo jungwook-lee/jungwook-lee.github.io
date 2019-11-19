@@ -4,9 +4,6 @@ title:  "Learn ML Day 1: Statistical Learning Basics"
 date:   2019-11-18 13:43:00 -0400
 categories: basics machine_learning
 ---
-Notes from: ISLR 
-
-
 ## Statistical Learning
 
 Statistical learning is about sets of tools to understand data.
@@ -30,7 +27,7 @@ We often collect large amount of data \\(X\\), however the output variable \\(Y\
     - The exact form of \\( \hat{f} \\) doesn't matter, provided that it produce good predictions.
 - \\( \hat{f} \\) has 2 kinds of errors: 
     - reducible
-    - non-reducible.
+    - irreducible.
 
 **Modelling for Prediction**: Focus on just providing model that has accurate predictions.
 
@@ -64,4 +61,4 @@ Non-Parametric:
     - Note that the most flexible models doesn't always perform best. (overfitting)
     
 ### Exercises:
-- Derive the 2 reducible and non-reducible of errors.
+- Derive the 2 reducible and irreducible of errors.
