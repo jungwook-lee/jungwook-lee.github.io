@@ -74,5 +74,36 @@ Since there are usually not many test data, cross-validation is a very important
 
 In general, it is hard to explicitly calculate test bias, variance.
 
+## Classification
+In classification, we do not deal with continuous output variables, and thus we need to use discrete error functions. For example:
 
+\\[ \frac{1}{n} \sum_{i=1}^{n}I(y_i \neq \hat{y}_i) \\]
 
+The indicator function outputs 1, if the prediction did not match the ground truth output class. Thus, the above error function is a ratio of incorrect prediction over total output length.
+
+**The Bayes Classifier**: We can use estimate based on conditional probability between the features and the output:
+
+\\[ P(Y = j\ \|\ X = x_0) \\]
+
+This is the conditional probability that \\(Y\\) is certain class \\(j\\), given the predictor vector \\(x_0\\).
+
+The byes classifier's prediction is determined by the Bayes decision boundary.
+
+Bayes error rate is the lowest possible test error rate. The classifier will pick the class for the sete of features that make the conditional probability the highest. Thus, the Bayes error rate is:
+
+\\[ 1 - E\Bigl( \max_j P(Y = j \|X)\Bigr) \\]
+
+The Bayes error rate is analogous to the irreducible error.
+
+**K-Nearest Neighbors**
+- For real data, we do not know the conditional distribution of \\(Y \\) given \\(X\\). There for computing the Bayes classifier is impossible. 
+- Many methods attempt to estimate the conditional distribution of \\(Y\\) given \\(X\\) and then classify a given observation to the class with the highest estimate probability.
+
+\\[P(Y = j \| X = x_0) = \frac{1}{K}\sum_{i \in \mathcal{N}_0}I(y_i = j)\\]
+
+- \\(\mathcal{N}_0\\) represents the K nearest points to the feature \\(x_0\\)
+- The KNN estimate the conditional probability for class j as the fraction of points in \\(\mathcal{N}_0\\).
+- The KNN is simple yet a very effective approach to the optimal Bayes classifiers.
+- The choice of K (hyperparameter) affect the model. As K grows, the model becomes less flexible and generates smoother boundaries. 
+- Thus, with K == 1, the model severely overfits (low train error, high test error).
+- With K == 100, the model is not sufficiently flexible. (high train/test error).
