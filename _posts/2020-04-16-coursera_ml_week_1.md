@@ -36,7 +36,7 @@ Unsupervised Learning:
 
 - Cost function \\(J(\theta_0, \theta_1)\\) measures the accuracy of our hypothesis
 
-<p>\[ J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(\hat{y}i - y_i)^2 = \frac{1}{2m}\sum_{i=1}(h_\theta(x_i) - y_i)^2 \]</p>
+<p>\[ J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}(\hat{y}_i - y_i)^2 = \frac{1}{2m}\sum_{i=1}(h_\theta(x_i) - y_i)^2 \]</p>
 
 - The following form is "squared error function"/"mean squared error"
   - mean is halved for computation of gradient descent (derivative of cost function cancels 1/2)
@@ -59,7 +59,7 @@ Unsupervised Learning:
 - With more than 1 global optima, gradient descent will likely be stuck at local optimal points
 
 > repeat until convergence
-\\[\theta_j := \theta_j - \alpha \frac{\partial}{\partial\theta_j}J(\theta_0, \theta_1) (for\ j=0\ and\ j=1)\\]
+\\[\theta_j := \theta_j - \alpha \frac{\partial}{\partial\theta_j}J(\theta_0, \theta_1) \hspace{20pt} (for\ j=0\ and\ j=1)\\]
 
 - Note that \\(:=\\) symbol means assignment
 - \\(\alpha\\) is learning rate (always positive)
