@@ -56,7 +56,7 @@ To update the gradient descent for multivariable form:
 
 > repeat until convergence
 <p>\[
-\theta_j := \theta_j - \alpha \frac{\partial}{\partial\theta_j} (h_\theta (x^{(i)}) - y^{(i)})x_j^{(i)}
+\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m}(h_\theta (x^{(i)}) - y^{(i)})x_j^{(i)}
 \]</p>
 > simultaneously update \\(\theta_j\\) for j = 0,1,...,n
 
