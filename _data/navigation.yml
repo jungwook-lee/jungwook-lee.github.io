@@ -24,3 +24,7 @@ docs:
         url: /coursera/machine_learning/coursera_ml_week_2
       - title: "Classification"
         url: /coursera/machine_learning/coursera_ml_week_3
+  - title: Algorithms
+    children:
+      - title: "Maximum Subarray"
+        url: /algorithms/kadanes_algorithm/
