@@ -73,3 +73,100 @@ $$</p>
   - \\( \text{As}~h_\theta(x) \rightarrow 1,~ \text{cost} \rightarrow 0~\text{when}~y = 1\\)
     - Don't penalize when the classification is right
   - It is simliar intuition but flipped for the case when \\(y=0\\)
+
+## Simplified cost function and gradient descent
+**Idea**: simplify the cost function:
+\\[\text{cost}(h_\theta(x), y) = -y\log(h_\theta(x)) - (1-y)\log(1-h_\theta(x)) \\]
+
+**Idea**: derive the logistic regression cost function:
+\\[J(\theta) = -\frac{1}{m}\Biggl(\sum^m_{i=1} y^{(i)}\log(h_\theta(x^{(i)})) + (1-y^{(i)})\log(1-h_\theta(x^{(i)}))\Biggr)\\]
+- In statistics, this can be derived by Maximum Liklihood Estimation (MLE).
+  - Has nice property for optimization (convex)
+
+**Exercise**: derive the gradient for the above cost function.
+  - hint: derivative of \\(\frac{\partial}{\partial x}\sigma (x) = \sigma(x)(1-\sigma(x))\\)
+
+Thus, the gradient descent algorithm is:
+<p>
+\begin{align}
+& \text{repeat until convergence} \\
+& ~~~~~~~\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m}(h_\theta (x^{(i)}) - y^{(i)})x_j^{(i)} \\
+& \text{simultaneously update $\theta_j$ for $j = 0,1,...,n$}
+\end{align}
+</p>
+
+## Advanced Optimization
+- **Idea** Other optimization algorithms than gradient descent:
+  - conjugate gradient
+  - BFGS
+  - L-BFGS
+  - No need to pick \\(\alpha\\), uses line search
+  - Often faster, at the cost of being more complex
+
+# Multiclass Classification
+## One-vs-all
+**Idea**: train a logistic regression classifier \\(h_\theta^{i}(x)\\) for each class \\(i\\) to predict the probability
+that \\(y=i\\).
+
+# Overfitting
+## Problem of Overfitting
+- If a given model is failing to generalize due to a strong preconception/bias: underfitting, "High bias"
+  - model is too simple
+  - not enough data
+- If a given model is fitting all the data points but failing to generalize: overfitting, "High variance"
+  - model is too complex
+  - too many parameters/features
+  - not enough regularization
+
+Options:
+1. Reduce number of features.
+   - Manually select which features to keep
+   - Model selection algorithm
+2. Regularization
+   - Keep all the features, but reduce magnitude/values of parameter \\(\theta_j\\)
+   - Works well when we have a lot of features, each contribute a bit to predict \\(y\\)
+
+## Regularization
+- **Idea**: penalize some paramters by attributing them to higher cost, to drive down the magnitude (thus effectively reducing their contribution)
+  - "Simpler" Hypothesis
+  - Less prone to overfitting
+  - Optimization becomes a balance act of fitting the training set and reducing magnitude of parameters
+
+  <p>\[ J(\theta) = \frac{1}{2m}\Biggr(\sum_{i=1}^{m}(h_\theta (x^{(i)}) - y^{i})^2 + \lambda\sum^{n}_{j=1}\theta_j^2\Biggr) \]</p>
+
+## Regularized Linear Regression
+- **Idea**: Apply the regularization term for linear regression
+<p>\[ J(\theta) = \frac{1}{2m}\Biggr(\sum_{i=1}^{m}(h_\theta (x^{(i)}) - y^{i})^2 + \lambda\sum^{n}_{j=1}\theta_j^2\Biggr) \]</p>
+
+<p>
+\begin{align}
+& \text{repeat until convergence} \\
+& ~~~~~~~\theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^{m}(h_\theta (x^{(i)}) - y^{(i)})x_0^{(i)} \\
+& ~~~~~~~\theta_j := \theta_j - \alpha \Biggr( \frac{1}{m} \sum_{i=1}^{m}(h_\theta (x^{(i)}) - y^{(i)})x_j^{(i)} + \frac{\lambda}{m}\theta_j \Biggr) \\
+& \text{simultaneously update $\theta_j$ for $j = 1,...,n$}
+\end{align}
+</p>
+
+**Note**:
+- The update above treats the 0th term separately.
+- The above form is \\(\frac{\partial}{\partial\theta_j}J(\theta)\\) with regularization for linear regression
+- If we isolate \\(\theta_j\\) terms, a constant of \\(1 - \frac{\lambda}{m}\\) appears, which helps drive down the weights/parameters
+
+- **Idea**: Apply regularization to [normal form of linear regression](/coursera/machine_learning/coursera_ml_week_2/#normal-equations)
+<p>\[
+\theta = \Biggr(X^T X + \lambda \\
+\begin{bmatrix}
+   0 & & & \\
+   & 1 & & \\
+   & & \ddots & \\
+   & & & 1
+\end{bmatrix}
+\Biggr)^{-1}X^T y
+\]</p>
+- The regularization helps in making the inner matrix singular/invertible, when \\((m < n)\\)
+
+## Regularized Logistic Regression
+- **Idea**: Apply the regularization term for logistic regression cost function
+\\[J(\theta) = -\Biggl(\frac{1}{m}\sum^m_{i=1} y^{(i)}\log(h_\theta(x^{(i)})) + (1-y^{(i)})\log(1-h_\theta(x^{(i)})) - \frac{\lambda}{m}\sum^{n}_{j=1}\theta_j^2 \Biggr) \\]
+- The overall gradient descent for regularized linear regression is same as [Regularized Linear Regression](/coursera/machine_learning/coursera_ml_week_3/#regularized-linear-regression)
+- Take note here that the sigmoid function is used in the hypothesis term.

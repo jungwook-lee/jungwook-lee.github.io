@@ -109,10 +109,20 @@ X =
   (x^{(1)})^T \\
   (x^{(2)})^T \\
   (x^{(3)})^T \\
-  (x^{(4)})^T \\
   \vdots \\
+  (x^{(m)})^T \\
 \end{bmatrix}
 \in \mathbb{R}^{m \times (n+1)}
+\hspace{20pt}
+y =
+\begin{bmatrix}
+  (y^{(1)})^T \\
+  (y^{(2)})^T \\
+  (y^{(3)})^T \\
+  \vdots \\
+  (y^{(m)})^T \\
+\end{bmatrix}
+\in \mathbb{R}^{m}
 \]</p>
 - In octave: `pinv(X'*X)*X'*y`
 - For normal equation, feature scaling is not necessary.
@@ -131,5 +141,5 @@ X =
 - If \\(X^T X\\) is non-invertible:
   - linearly dependent features (redundant, reducible rows)
     - having 2 separate features that are scaled i.e. (feets and meters of same measurement)
-  - too many features (e.g. \\(m \leq n\\))
+  - too many features compared to number of input examples (e.g. \\(m \leq n\\))
     - delete, or use regularization
