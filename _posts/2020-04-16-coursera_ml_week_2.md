@@ -1,10 +1,10 @@
 ---
 layout: single
-title:  "Coursera Machine Learning - Week 2"
-date:   2020-04-16 21:29:19 -0400
+title:  "Andrew Ng's Machine Learning Course - Week 2"
+date:   2020-04-16
 categories: coursera machine_learning
-toc: true
 ---
+
 # Multivariate Linear Regression
 
 ## Multiple Features

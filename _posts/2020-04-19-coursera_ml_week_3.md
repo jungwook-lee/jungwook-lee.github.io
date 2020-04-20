@@ -1,10 +1,10 @@
 ---
 layout: single
-title:  "Coursera Machine Learning - Week 3"
+title:  "Andrew Ng's Machine Learning Course - Week 3"
 date:   2020-04-19
 categories: coursera machine_learning
-toc: true
 ---
+
 # Classification
 
 ## Classification and Representation

@@ -290,11 +290,13 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
-      read_time: true
-      comments: # true
+      author_profile: false
       share: false
       related: false
+      toc: true
+      sidebar:
+        nav: "docs"
+  # _pages
   - scope:
       path: "_pages"
       type: pages

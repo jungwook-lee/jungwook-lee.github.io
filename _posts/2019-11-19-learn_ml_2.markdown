@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Learn ML Day 2: Supervised vs. Unsupervised"
+title:  "Machine Learning: Supervised vs. Unsupervised"
 date:   2019-11-19 10:15:00 -0400
 categories: basics machine_learning
 ---
@@ -17,7 +17,7 @@ Supervised:
     - GAM
     - boosting
     - SVM
- 
+
 Unsupervised:
 - Lacks output variable that can supervise the analysis.
 - Seek to understand the relationships between the variables:
@@ -39,7 +39,7 @@ Regression: prediction of continuous values (i.e. price, age)
 - Estimation of Class Probabilities can be either regression/classification problem.
 - K-nearest neighbour can be used for both.
 - The choice of regression/classification based on predictor is not important, since they can be encoded before analysis.
- 
+
 ## Model Accuracy
 No free lunch theorem: No one method dominates all others over in possible datasets.
 
@@ -51,7 +51,7 @@ For regression: Mean squared error is a commonly used measure.
 
 Training accuracy is often not important, but the generalization capability on unseen dataset. Therefore, the model should be optimized for testing accuracy.
 
-The U-shape is a fundamental property of any statistical learning. The U-shape occurs between training, test error. 
+The U-shape is a fundamental property of any statistical learning. The U-shape occurs between training, test error.
 - As model flexibility increase, training error decreases, but test error might not.
 - Small training error, but large test error = **Overfitting**
 
@@ -96,7 +96,7 @@ Bayes error rate is the lowest possible test error rate. The classifier will pic
 The Bayes error rate is analogous to the irreducible error.
 
 **K-Nearest Neighbors**
-- For real data, we do not know the conditional distribution of \\(Y \\) given \\(X\\). There for computing the Bayes classifier is impossible. 
+- For real data, we do not know the conditional distribution of \\(Y \\) given \\(X\\). There for computing the Bayes classifier is impossible.
 - Many methods attempt to estimate the conditional distribution of \\(Y\\) given \\(X\\) and then classify a given observation to the class with the highest estimate probability.
 
 \\[P(Y = j \| X = x_0) = \frac{1}{K}\sum_{i \in \mathcal{N}_0}I(y_i = j)\\]
@@ -104,6 +104,6 @@ The Bayes error rate is analogous to the irreducible error.
 - \\(\mathcal{N}_0\\) represents the K nearest points to the feature \\(x_0\\)
 - The KNN estimate the conditional probability for class j as the fraction of points in \\(\mathcal{N}_0\\).
 - The KNN is simple yet a very effective approach to the optimal Bayes classifiers.
-- The choice of K (hyperparameter) affect the model. As K grows, the model becomes less flexible and generates smoother boundaries. 
+- The choice of K (hyperparameter) affect the model. As K grows, the model becomes less flexible and generates smoother boundaries.
 - Thus, with K == 1, the model severely overfits (low train error, high test error).
 - With K == 100, the model is not sufficiently flexible. (high train/test error).

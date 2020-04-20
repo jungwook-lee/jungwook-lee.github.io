@@ -2,6 +2,8 @@
 main:
   # - title: "Blog"
   #   url: /blog/
+  - title: "Categories"
+    url: /categories/
   - title: "Projects"
     url: /projects/
   - title: "About"
@@ -12,3 +14,13 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+docs:
+  - title: Machine Learning
+    children:
+      - title: "Basics"
+        url: /coursera/machine_learning/coursera_ml_week_1
+      - title: "Linear Regression"
+        url: /coursera/machine_learning/coursera_ml_week_2
+      - title: "Classification"
+        url: /coursera/machine_learning/coursera_ml_week_3

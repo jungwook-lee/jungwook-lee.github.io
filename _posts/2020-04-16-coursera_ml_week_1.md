@@ -1,12 +1,11 @@
 ---
 layout: single
-title:  "Coursera Machine Learning - Week 1"
-date:   2020-04-16 12:29:19 -0400
+title:  "Andrew Ng's Machine Learning Course - Week 1"
+date:   2020-04-16
 categories: coursera machine_learning
-toc: true
 ---
 
-## Introduction
+# Introduction
 
 Machine learning definition by Tom Mitchell:
 

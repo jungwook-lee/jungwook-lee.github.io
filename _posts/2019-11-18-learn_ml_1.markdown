@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Learn ML Day 1: Statistical Learning Basics"
+title:  "Machine Learning: Statistical Learning Basics"
 date:   2019-11-18 13:43:00 -0400
 categories: basics machine_learning
 ---
@@ -19,13 +19,13 @@ Statistical learning is about sets of tools to understand data.
 
 ### Prediction
 
-We often collect large amount of data \\(X\\), however the output variable \\(Y\\) is not as easy to obtain. Thus, we aim to predict the output, \\( \hat{Y} \\), the prediction, by estimating a the relationship, \\( \hat{f} \\). 
+We often collect large amount of data \\(X\\), however the output variable \\(Y\\) is not as easy to obtain. Thus, we aim to predict the output, \\( \hat{Y} \\), the prediction, by estimating a the relationship, \\( \hat{f} \\).
 
 \\[ \hat{Y} = \hat{f}(X) \\]
 
 - \\( \hat{f} \\) is often treated as black-box:
     - The exact form of \\( \hat{f} \\) doesn't matter, provided that it produce good predictions.
-- \\( \hat{f} \\) has 2 kinds of errors: 
+- \\( \hat{f} \\) has 2 kinds of errors:
     - reducible
     - irreducible.
 
@@ -59,6 +59,6 @@ Non-Parametric:
 - Inference: prefer simple, relatively inflexible static methods
 - Prediction: not care for interpretability
     - Note that the most flexible models doesn't always perform best. (overfitting)
-    
+
 ### Exercises:
 - Derive the 2 reducible and irreducible of errors.
