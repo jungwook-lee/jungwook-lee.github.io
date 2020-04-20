@@ -27,3 +27,6 @@ def max_subarray(numbers):
     best_sum = max(best_sum, current_sum)
 return best_sum
 ```
+
+## Sources
+[geeksforgeeks](https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/), [wikipedia](https://en.wikipedia.org/wiki/Maximum_subarray_problem)
