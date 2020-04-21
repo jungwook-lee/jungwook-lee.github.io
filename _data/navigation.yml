@@ -30,3 +30,5 @@ docs:
     children:
       - title: "Maximum Subarray"
         url: /algorithms/kadanes_algorithm/
+      - title: "Binary Search"
+        url: /algorithms/binary_search/
