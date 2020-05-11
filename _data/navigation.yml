@@ -9,7 +9,7 @@ main:
   - title: "About"
     url: /about/
   # - title: "Posts"
-  #   url: /year-archive/
+  #   url: /year-archive
   # - title: "Categories"
   #   url: /collection-archive/
   # - title: "Sitemap"
@@ -32,3 +32,11 @@ docs:
         url: /algorithms/kadanes_algorithm/
       - title: "Binary Search"
         url: /algorithms/binary_search/
+      - title: "Heaps"
+        url: /algorithms/data_structures/heaps/
+  - title: Others
+    children:
+      - title: "Textbooks"
+        url: /resource/useful_links
+      - title: "VisuAlgo"
+        url: "https://visualgo.net/en"

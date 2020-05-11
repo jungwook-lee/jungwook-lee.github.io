@@ -53,3 +53,11 @@ categories: coursera machine_learning
 - Output layer outputs values with same dimensions as the output classes \\(h_\Theta \in R^{N+1}\\)
   - The extra 1 is the negative class (i.e. in image detection background)
 - Take training labels and convert them to one-hot vectors
+
+# Learning
+
+## Cost Function and Backprop
+
+## Backprop in Practice
+
+## Applications 
