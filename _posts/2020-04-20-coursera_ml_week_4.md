@@ -61,3 +61,4 @@ categories: coursera machine_learning
 ## Backprop in Practice
 
 ## Applications 
+- Random Initialization: symmetry breaking
